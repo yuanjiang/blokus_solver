@@ -1,0 +1,58 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{fullpage}
+\usepackage{verbatim}
+\usepackage{palatino}
+
+\usepackage{natbib, setspace}
+
+\newcommand{\bs}{\boldsymbol}
+\newcommand{\mb}{\mathbf}
+
+\begin{document}
+\doublespacing
+
+\noindent Computer Science 51 \hfill \today\\
+\noindent\makebox[\linewidth]{\rule{6.5in}{2.0pt}}
+
+\begin{center}
+
+{{\LARGE \bf Final Project Specification}} \\
+\vspace{3mm}
+{{\LARGE \bf }}
+
+\noindent\makebox[\linewidth]{\rule{6.5in}{2.0pt}}
+
+\vspace{3mm}
+
+{\large Michelle Cone $|$ Theresa Gebert $|$ Yuan Jiang \\
+\normalsize mcone@college.harvard.edu $|$ tgebert@college.harvard.edu $|$ yuanjiang@college.harvard.edu} \\
+
+\end{center}
+
+
+\vspace{2mm}
+
+\section{Progress}
+Over the past week we have essentially completed all of our classes and interface for our project. We have not actually implemented players with the final strategies but we've implement players with na{\"i}ve strategies that do work from our testing. There are a few functions we need to add to deal with corner cases but currently our code shouldn't be buggy. 
+\section{Problems}
+Currently we are a bit stuck writing a function that generates all possible moves for a subset of pieces. This is definitely the hardest part of our project. We know of a brute force way to do it but it is computationally intensive/impossible, so we've been spending time thinking of a better way to write the function. We are currently considering writing individual functions for each piece, which would speed up the code a lot. We hope to have that done by the end of this weekend.  
+\section{Teamwork}
+We usually work in pairs when not all of us are available at the same time. Since we have mostly been writing classes that all of the parts of our project will need to use, we have been meeting together to write the code. Once we have completed writing our \texttt{possible\_moves} function, we will split off and write the algorithmic code on our own. Finally, when we are finished with that, we will meet up again to put all of our code together, and debug/test our game. 
+\section{Plan}
+\begin{itemize}
+\item Saturday, April 26 -- Work on writing \texttt{possible\_moves} function (All). 
+\item Sunday, April 27 -- Finish writing \texttt{possible\_moves} function. Start on writing \texttt{random\_move} algorithm (All). 
+\item Monday, April 28 -- Finish \texttt{random\_move} function. Start and finish writing Greedy - Monte Carlo strategy (Yuan). Will also need to write a function that picks the best moves as determined by space, corners, and Manhattan distance to center (Yuan). Start and finish writing Minimax strategy (Theresa and Michelle). 
+\item Tuesday, April 29 -- Debug and test code (All).
+\item Wednesday, April 30 -- Debug and test code. Start on demo video (All).
+\item Thursday, May 1 -- Work on writeup and demo video. 
+\item Friday, May 2 -- Last minute fixes and submission!
+\end{itemize}
+
+
+\end{document}
+
+
+
+
