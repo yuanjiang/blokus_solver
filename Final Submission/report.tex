@@ -1,0 +1,88 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{fullpage}
+\usepackage{verbatim}
+\usepackage{palatino}
+
+\usepackage{natbib, setspace}
+
+\newcommand{\bs}{\boldsymbol}
+\newcommand{\mb}{\mathbf}
+
+\begin{document}
+\doublespacing
+
+\noindent Computer Science 51 \hfill \today\\
+\noindent\makebox[\linewidth]{\rule{6.5in}{2.0pt}}
+
+\begin{center}
+
+{{\LARGE \bf Final Project Writeup:}} \\
+\vspace{3mm}
+{{\LARGE \bf \it PLAYING BLOKUS}}
+
+\noindent\makebox[\linewidth]{\rule{6.5in}{2.0pt}}
+
+\vspace{3mm}
+
+{\large Michelle Cone $|$ Theresa Gebert $|$ Yuan Jiang \\
+\normalsize mcone@college.harvard.edu $|$ tgebert@college.harvard.edu $|$ yuanjiang@college.harvard.edu} \\
+
+\end{center}
+
+
+\vspace{2mm}
+
+\section{Introduction}
+
+This is what this project is about. Four sentences. Summary.
+
+
+\bigskip
+
+
+\section{Instructions}
+
+These are instructions for how to run our code, look at our code, and play our game.
+
+\subsection{Playing the Game}
+
+This is instructions for how to play the game from Terminal.
+
+\subsection{Checking the Code}
+
+This is instructions for how to open and run the iPython file.
+
+
+\bigskip
+
+
+\section{Timeline}
+
+We currently have skeleton code for our board, players, and pieces. For the next week, we will be aiming to finish writing one function per night.
+
+\begin{enumerate}
+	\item April 21 -- Finish writing classes for board, players, and pieces (including flip and rotate functions). 
+	\item April 22 -- Write \texttt{valid\_moves} function that takes in a single piece and the current board and returns an list of coordinate arrays, where each coordinate array is a possible conformation to place the piece on the board. 
+	\item April 23 -- Write \texttt{random\_move} function for the random player. The function will take in a list of pieces, and return a random piece placement on the current board. 
+	\item April 24 -- Write \texttt{greedy\_move} function for the greedy - Monte Carlo player. The function will take in a list of pieces, and return the current most optimal piece placement on the board. 
+	\item April 25 -- Begin writing functions for minimax player. This player will be similar to the greedy - Monte Carlo player but will consider more than just one move ahead in time.
+	\item April 26 -- Write minimax. Finish implementing minimax algorithm. Consider writing code for several different versions (more or less steps ahead in the game, smaller or larger board, etc.)
+	\item April 27 -- CHECKPOINT - Finish polishing up code for all pieces and algorithms. Test to see if everything is working. If not, work on debugging. Send to TF when done.
+	\item April 28 -- Write interface so that we can observe the two players playing against each other.  
+	\item April 29 -- Start implementing user-player functionality. Write \texttt{user\_move} that take in the current board, a piece, and a coordinate, and returns the piece placed on the board. Test to see if this works. 
+	\item April 30 -- Make demo video. Start writeup.
+	\item May 1 -- Finish writeup. 
+	\item May 2 -- Make sure everything works. Polish up everything. Submit! 
+\end{enumerate}
+\section{Progress Report}
+Please see attached .ipynb file in email to see all the code we have written for our project so far.
+\section{Version Control}
+We have all set up github accounts and are working with all our files (code, latex, etc.) in one shared folder.
+
+
+\end{document}
+
+
+
+
