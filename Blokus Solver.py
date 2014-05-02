@@ -166,11 +166,48 @@ class Shape(object):
             x1 = (x1 - (x2 - x1))
             return (x1, p[1])
         
+        def flip_i(p):
+            if self.ID == "I5":
+                index = self.points.index(p)
+                if index == 0 or index == 4:
+                    self.refpt = self.points[abs(index-4)]
+                else:
+                    if index == 1:
+                        self.refpt = self.points[3]
+                    if index == 3:
+                        self.refpt = self.points[1]
+                return p
+                
+            elif self.ID == "I4":
+                index = self.points.index(p)
+                if index == 0 or index == 3:
+                    self.refpt = self.points[abs(index-3)]
+                else:
+                    if index == 1:
+                        self.refpt = self.points[2]
+                    else:
+                        self.refpt = self.points[1]
+                return p
+            
+            elif self.ID == "I3":
+                index = self.points.index(p)
+                if index == 0 or index == 2:
+                    self.refpt = self.points[abs(index-1)]
+                return p
+            
+            else:
+                index = self.points.index(p)
+                self.refpt = self.points[abs(index-1)]
+                return p
+    
         # flip the piece horizontally
         if orientation == "h":
-            self.points = map(flip_h, self.points)
-            self.corners = map(flip_h, self.corners)
-
+            if self.ID in ["I5", "I4", "I3", "I2"]:
+                self.points = map(flip_i, self.points)
+                self.corners = map(flip_i, self.corners)
+            else:
+                self.points = map(flip_h, self.points)
+                self.corners = map(flip_h, self.corners)
 # <markdowncell>
 
 # The following is a map of all of the shapes in the game of Blokus. It is not difficult to add shapes to this game as long as the user specifies the size, points, and corners associated with that shape.
