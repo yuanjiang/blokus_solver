@@ -1,7 +1,17 @@
+# -*- coding: utf-8 -*-
+# <nbformat>3.0</nbformat>
+
+# <markdowncell>
+
+# <center>
+# <img src="http://i983.photobucket.com/albums/ae316/cleardragon/bl.jpg">
+# </center>
+# <br>
+
 # <headingcell level=1>
 
 # <center>
-# CS51 Final Project
+#     CS51 Final Project
 # </center>
 
 # <markdowncell>
@@ -40,7 +50,6 @@
 #  1. The goal is to end up with the smallest area in pieces left over once the board has been filled.
 #  
 
-# <headingcell level=3>
 
 # Setting up the Game
 
@@ -51,6 +60,7 @@
 # <codecell>
 
 # NECESSARY MODULES:
+
 
 import math
 import random
@@ -158,18 +168,10 @@ class Shape(object):
             x1 = (x1 - (x2 - x1))
             return (x1, p[1])
         
-        def no_flip(p):
-            return p
-        
         # flip the piece horizontally
         if orientation == "h":
             self.points = map(flip_h, self.points)
             self.corners = map(flip_h, self.corners)
-        # flip the piece vertically
-        elif orientation == "None":
-            self.points = map(no_flip, self.points)
-            self.corners = map(no_flip, self.corners)
-        else: raise Exception("Invalid orientation.")
 
 # <markdowncell>
 
@@ -183,19 +185,11 @@ class Shape(object):
 #
 # The ID will always be set to the name next to each shape.
 
-# Implement all of the shapes according to the Shape
-# class defined earlier and according to the image above.
-# The highlighted point is the generation point and the
-# numbers represent the order in which points will be
-# listed in the points variable.
-#
-# The ID will always be set to the name next to each shape.
-
 class I1(Shape):
     def __init__(self):
         self.ID = "I1"
         self.size = 1
-    def set_points(self, x, y):
+    def set_points(self, x, y): 
         self.points = [(x, y)]
         self.corners = [(x + 1, y + 1), (x - 1, y - 1), (x + 1, y - 1), (x - 1, y + 1)]
 
@@ -203,15 +197,15 @@ class I2(Shape):
     def __init__(self):
         self.ID = "I2"
         self.size = 2
-    def set_points(self, x, y):
+    def set_points(self, x, y): 
         self.points = [(x, y), (x, y + 1)]
         self.corners = [(x - 1, y - 1), (x + 1, y - 1), (x + 1, y + 2), (x - 1, y + 2)]
-
+    
 class I3(Shape):
     def __init__(self):
         self.ID = "I3"
         self.size = 3
-    def set_points(self, x, y):
+    def set_points(self, x, y): 
         self.points = [(x, y), (x, y + 1), (x, y + 2)]
         self.corners = [(x - 1, y - 1), (x + 1, y - 1), (x + 1, y + 3), (x - 1, y + 3)]
 
@@ -219,63 +213,63 @@ class I4(Shape):
     def __init__(self):
         self.ID = "I4"
         self.size = 4
-    def set_points(self, x, y):
+    def set_points(self, x, y): 
         self.points = [(x, y), (x, y + 1), (x, y + 2), (x, y + 3)]
         self.corners = [(x - 1, y - 1), (x + 1, y - 1), (x + 1, y + 4), (x - 1, y + 4)]
-
+        
 class I5(Shape):
     def __init__(self):
         self.ID = "I5"
         self.size = 5
-    def set_points(self, x, y):
+    def set_points(self, x, y): 
         self.points = [(x, y), (x, y + 1), (x, y + 2), (x, y + 3), (x, y + 4)]
         self.corners = [(x - 1, y - 1), (x + 1, y - 1), (x + 1, y + 5), (x - 1, y + 5)]
-
+        
 class V3(Shape):
     def __init__(self):
         self.ID = "V3"
         self.size = 3
-    def set_points(self, x, y):
+    def set_points(self, x, y): 
         self.points = [(x, y), (x, y + 1), (x + 1, y)]
         self.corners = [(x - 1, y - 1), (x + 2, y - 1), (x + 2, y + 1), (x + 1, y + 2), (x - 1, y + 2)]
-
+        
 class L4(Shape):
     def __init__(self):
         self.ID = "L4"
         self.size = 4
-    def set_points(self, x, y):
+    def set_points(self, x, y): 
         self.points = [(x, y), (x, y + 1), (x, y + 2), (x + 1, y)]
-        self.corners = [(x - 1, y - 1), (x + 2, y - 1), (x + 2, y + 1), (x + 1, y + 3), (x - 1, y + 3)]
-
+        self.corners = [(x - 1, y - 1), (x + 2, y - 1), (x + 2, y + 1), (x + 1, y + 3), (x - 1, y + 3)]        
+        
 class Z4(Shape):
     def __init__(self):
         self.ID = "Z4"
         self.size = 4
-    def set_points(self, x, y):
+    def set_points(self, x, y): 
         self.points = [(x, y), (x, y + 1), (x + 1, y + 1), (x - 1, y)]
         self.corners = [(x - 2, y - 1), (x + 1, y - 1), (x + 2, y), (x + 2, y + 2), (x - 1, y + 2), (x - 2, y + 1)]
-
+        
 class O4(Shape):
     def __init__(self):
         self.ID = "O4"
         self.size = 4
-    def set_points(self, x, y):
+    def set_points(self, x, y): 
         self.points = [(x, y), (x, y + 1), (x + 1, y + 1), (x + 1, y)]
         self.corners = [(x - 1, y - 1), (x + 2, y - 1), (x + 2, y + 2), (x - 1, y + 2)]
-
+        
 class L5(Shape):
     def __init__(self):
         self.ID = "L5"
         self.size = 5
-    def set_points(self, x, y):
+    def set_points(self, x, y): 
         self.points = [(x, y), (x, y + 1), (x + 1, y), (x + 2, y), (x + 3, y)]
         self.corners = [(x - 1, y - 1), (x + 4, y - 1), (x + 4, y + 1), (x + 1, y + 2), (x - 1, y + 2)]
-
+        
 class T5(Shape):
     def __init__(self):
         self.ID = "T5"
         self.size = 5
-    def set_points(self, x, y):
+    def set_points(self, x, y): 
         self.points = [(x, y), (x, y + 1), (x, y + 2), (x - 1, y), (x + 1, y)]
         self.corners = [(x + 2, y - 1), (x + 2, y + 1), (x + 1, y + 3), (x - 1, y + 3), (x - 2, y + 1), (x - 2, y - 1)]
 
@@ -283,39 +277,39 @@ class V5(Shape):
     def __init__(self):
         self.ID = "V5"
         self.size = 5
-    def set_points(self, x, y):
+    def set_points(self, x, y): 
         self.points = [(x, y), (x, y + 1), (x, y + 2), (x + 1, y), (x + 2, y)]
-        self.corners = [(x - 1, y - 1), (x + 3, y - 1), (x + 3, y + 1), (x + 1, y + 3), (x - 1, y + 3)]
+        self.corners = [(x - 1, y - 2), (x + 3, y - 1), (x + 3, y + 1), (x + 1, y + 3), (x - 1, y + 3)]
 
 class N(Shape):
     def __init__(self):
         self.ID = "N"
         self.size = 5
-    def set_points(self, x, y):
+    def set_points(self, x, y): 
         self.points = [(x, y), (x + 1, y), (x + 2, y), (x, y - 1), (x - 1, y - 1)]
-        self.corners = [(x + 1, y - 2), (x + 3, y - 1), (x + 3, y + 1), (x - 1, y + 1), (x - 2, y), (x - 2, y - 2)]
-
+        self.corners = [(x + 1, y - 2), (x + 3, y - 1), (x + 3, y + 1), (x - 1, y + 2), (x - 2, y), (x - 2, y - 2)]
+        
 class Z5(Shape):
     def __init__(self):
         self.ID = "Z5"
         self.size = 5
-    def set_points(self, x, y):
+    def set_points(self, x, y): 
         self.points = [(x, y), (x + 1, y), (x + 1, y + 1), (x - 1, y), (x - 1, y - 1)]
         self.corners = [(x + 2, y - 1), (x + 2, y + 2), (x, y + 2), (x - 2, y + 1), (x - 2, y - 2), (x, y - 2)]
-
+        
 class T4(Shape):
     def __init__(self):
         self.ID = "T4"
         self.size = 4
-    def set_points(self, x, y):
+    def set_points(self, x, y): 
         self.points = [(x, y), (x, y + 1), (x + 1, y), (x - 1, y)]
-        self.corners = [(x + 2, y - 1), (x + 2, y + 1), (x + 1, y + 2), (x - 1, y + 2), (x - 2, y + 1), (x - 2, y - 1)]
-
+        self.corners = [(x + 2, y - 2), (x + 2, y + 2), (x + 1, y + 2), (x - 1, y + 2), (x - 2, y + 1), (x - 2, y - 1)]
+        
 class P(Shape):
     def __init__(self):
         self.ID = "P"
         self.size = 5
-    def set_points(self, x, y):
+    def set_points(self, x, y): 
         self.points = [(x, y), (x + 1, y), (x + 1, y - 1), (x, y - 1), (x, y - 2)]
         self.corners = [(x + 1, y - 3), (x + 2, y - 2), (x + 2, y + 1), (x - 1, y + 1), (x - 1, y - 3)]
 
@@ -323,10 +317,10 @@ class W(Shape):
     def __init__(self):
         self.ID = "W"
         self.size = 5
-    def set_points(self, x, y):
+    def set_points(self, x, y): 
         self.points = [(x, y), (x, y + 1), (x + 1, y + 1), (x - 1, y), (x - 1, y - 1)]
         self.corners = [(x + 1, y - 1), (x + 2, y), (x + 2, y + 2), (x - 1, y + 2), (x - 2, y + 1), (x - 2, y - 2), (x, y - 2)]
-
+        
 class U(Shape):
     def __init__(self):
         self.ID = "U"
@@ -334,7 +328,7 @@ class U(Shape):
     def set_points(self, x, y):
         self.points = [(x, y), (x, y + 1), (x + 1, y + 1), (x, y - 1), (x + 1, y - 1)]
         self.corners = [(x + 2, y - 2), (x + 2, y), (x + 2, y + 2), (x - 1, y + 2), (x - 1, y - 2)]
-
+        
 class F(Shape):
     def __init__(self):
         self.ID = "F"
@@ -358,7 +352,6 @@ class Y(Shape):
     def set_points(self, x, y):
         self.points = [(x, y), (x, y + 1), (x + 1, y), (x + 2, y), (x - 1, y)]
         self.corners = [(x + 3, y - 1), (x + 3, y + 1), (x + 1, y + 2), (x - 1, y + 2), (x - 2, y + 1), (x - 2, y - 1)]
-
 
 # <headingcell level=4>
 
@@ -440,6 +433,12 @@ def fancyBoard(board, num):
 # Credit to Jake Vanderplas <vanderplas@astro.washington.edu>,  Dec. 2012
 # for inspiration for this code.
 # http://jakevdp.github.io/blog/2012/12/06/minesweeper-in-matplotlib/
+
+# <codecell>
+
+# This is the type of board the fancy printer produces in a separate window.
+
+# <codecell>
 
 # Here we implement the Board class. Boards take in
 # Players and update according to placements made.
@@ -622,7 +621,7 @@ class Player:
                 for num in xrange(try_out.size):
                     try_out.create(num, cr)
                     # And every possible flip.
-                    for fl in ["h", "None"]:
+                    for fl in ["None","h"]:
                         try_out.flip(fl)
                         # And every possible orientation.
                         for rot in [90]*4:
@@ -806,6 +805,33 @@ class Blokus(Game):
 
 # <headingcell level=3>
 
+# Testing
+
+# <markdowncell>
+
+# This is a small subset of the testing we did for our module. It is particularly important for the following cells to be run in the correct order. In addition to the testing not included below, we performed many tests as we wrote our functions.
+
+# <codecell>
+
+# Test the printing function on an empty board.
+
+# <codecell>
+
+# Instantiate a miniature Blokus game with the
+# 10x10 board created above.
+# 
+# Test the play function in the Blokus game.
+# Ensure that the number of rounds is incremented
+# appropriately.
+# 
+# Test that the pieces Alice has are reduced
+# appropriately.
+
+# <codecell>
+
+# Testing the possible_moves function in Player.
+
+
 # Algorithms
 
 # <markdowncell>
@@ -823,7 +849,7 @@ All_Shapes = [I1(), I2(), I3(), I4(), I5(), \
 
 All_Degrees = [0, 90, 180, 270]
 
-All_Flip = ['h', "None"]
+All_Flip = ["None", "h"]
 
 # <headingcell level=4>
 
@@ -859,6 +885,14 @@ def Random_Player(player, game):
     return None
 
 # <codecell>
+
+# Test out the Random_Player strategy on a standard two-player board.
+
+# Go on this link to see an animation of the game being played:
+# 
+# https://imgflip.com/gif/8fmd8
+
+# <headingcell level=4>
 
 # THE GREEDY PLAYER
 
@@ -966,10 +1000,6 @@ def Greedy_Player(player, game, weights):
                 tmp = map(map_eval, possibles)
                 # add all the elements in the temporary list in the final moves lsit
                 final_moves.extend(tmp)
-            # if there are no possible placements for the current piece:
-            else: 
-                # remove the piece from the list of pieces
-                shape_options.remove(piece)
                 
         # create score list that contains all Piece placements, sorted by their score        
         by_score = sorted(final_moves, key = lambda move: move[1], reverse = True)
@@ -1000,6 +1030,8 @@ def Greedy_Player(player, game, weights):
 # 
 # This returns a score for the placement.
 
+# <headingcell level=4>
+
 # THE MINIMAX PLAYER
 
 # <codecell>
@@ -1019,28 +1051,42 @@ def Minimax_Player(player, game, weights):
         corners have been covered by another player's pieces.
         """
         player.corners = set([(i,j) for (i,j) in player.corners if board.state[j][i] == game.board.null])
-    
-    # create a copy of the player's pieces
-    shape_options = [p for p in player.pieces]
-    # determine all possible moves
-    possibles = player.possible_moves(shape_options, game)
-    final_choices = []
-    # if there are possible moves:
-    if possibles != []:
-        # function for evaluating moves (for mapping purposes)
-        def eval_map (piece):
-            return eval_move(piece, player, game, weights)
-        # evaluate every possible move
-        candidate_moves = map(eval_map, possibles)
-        # create list of tuples (piece, score), sorted by score
-        by_score = sorted(candidate_moves, key = lambda move: move[1], reverse = True)
         
-        # take at most the n highest scoring moves
+    # create copy of player's pieces (no destructively altering player's pieces)
+    shape_options = [p for p in player.pieces]
+    board = game.board
+    
+    # create an empty list that will contain all the possible moves with their respective scores
+    final_moves = []
+    # for each piece, calculate all possible placements, and for each placement, calculate the score
+    # of the move; add (move, score) to the list of final moves
+    for piece in shape_options:
+        # calculate all possible placements for the current piece
+        possibles = player.possible_moves([piece], game)
+        # if there are possible placements for the current piece:
+        if possibles != []:
+            def map_eval(piece):
+                return eval_move(piece, player, game, weights)
+            # calculate score for each move and store it in a temporary list
+            tmp = map(map_eval, possibles)
+            # add all the elements in the temporary list in the final moves lsit
+            final_moves.extend(tmp)
+
+    # create score list that contains all Piece placements, sorted by their score        
+    by_score = sorted(final_moves, key = lambda move: move[1], reverse = True)
+    by_size = [p[0].size for p in by_score]
+    max_score = max(by_size)
+    by_score = [p for p in by_score if p[0].size == max_score]
+    # if the score list contains Piece placements (objects), return the highest scoring Piece placement
+    if len(by_score) > 0:
+        
+        final_choices = []
+        
         if len(by_score) > weights[2]:
             top_choices = by_score[:weights[2]]
         else:
             top_choices = by_score
-        
+
         for (piece, score) in top_choices:
             # create a copy of the game
             game_copy = copy.deepcopy(game)
@@ -1114,7 +1160,8 @@ def Minimax_Player(player, game, weights):
                 # append initial piece plus potential score to final_choices
                 final_choices.append((piece, best_score))
             # if there are no possible moves left, add the first played piece to the final_choices list
-            else: final_choices.append((piece, score))
+            else: 
+                final_choices.append((piece, score))
             
         # sort the list of final_choices by score
         final_choices = sorted(final_choices, key = lambda move: move[1], reverse = True)
@@ -1122,7 +1169,8 @@ def Minimax_Player(player, game, weights):
         return final_choices[0][0]
     
     # if there are no possible moves left, return None
-    else: return None
+    else: 
+        return None
 
 # <markdowncell>
 
@@ -1144,6 +1192,10 @@ def Minimax_Player(player, game, weights):
 # + W_3 \left [ size_{2,i} W_1 + \frac{\sum{(cor_{2,my} - cor_{2,opp})}}{n_{opp}} W_2 \right ]$
 # 
 # This returns a score for the placement.
+
+# <codecell>
+
+
 
 # USER INPUT
 
@@ -1215,7 +1267,7 @@ def User_Player(player, game):
 
 # <codecell>
 
-# PLAYING INSTRUCTIONS
+# INSTRUCTIONS & INITIALIZATION FOR USER GAME
 
 print "\n \n Welcome to Blokus! \n \n \n Blokus is a geometrically abstract, strategy board game. It can be a two- or four-player game. Each player has 21 pieces of a different color. The two-player version of the board has 14 rows and 14 columns. \n \n You will be playing a two-player version against an algorithm of your choice: Random, Greedy, or Minimax. In case you need to review the rules of Blokus, please follow this link: http://en.wikipedia.org/wiki/Blokus. \n \n This is how choosing a move is going to work: after every turn, we will display the current state of the board, as well as the scores of each player and the pieces available to you. We have provided you with a map of the names of the pieces, as well as their reference points, denoted by red dots. When you would like to place a piece, we will prompt you for the name of the piece and the coordinate (column, row) of the reference point. If multiple placements are possible, we will let you choose which one you would like to play. \n \n Good luck! \n \n"
 
@@ -1237,6 +1289,10 @@ else:
     computer = Greedy("A", "Computer", Minimax_Player, [2, 1, 5, 1, 1])
 
 user = Player("B", "User", User_Player)
+
+# <codecell>
+
+# Set up the board and the game.
 
 standard_size = Board(14, 14, "_")
 
@@ -1272,9 +1328,4 @@ by_name = sorted(userblokus.players, key = lambda player: player.name)
 
 for p in by_name:
     print p.name + " : " + str(p.score)
-
-
-
-
-
 
