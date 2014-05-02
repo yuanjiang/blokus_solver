@@ -50,6 +50,12 @@
 #  1. The goal is to end up with the smallest area in pieces left over once the board has been filled.
 #  
 
+# <codecell>
+
+from IPython.display import YouTubeVideo
+YouTubeVideo('CdqP6G1YtIY')
+
+# <headingcell level=3>
 
 # Setting up the Game
 
@@ -61,14 +67,12 @@
 
 # NECESSARY MODULES:
 
-
 import math
 import random
 import numpy as np
 import matplotlib.pyplot as plt
 import copy
 
-from PIL import Image                                                                                
 from matplotlib import rcParams
 rcParams['figure.figsize'] = (6, 6)
 rcParams['figure.dpi'] = 150
@@ -88,7 +92,7 @@ def rotatex((x, y), (refx, refy), deg):
     rotated about the point (refx, refy) by
     deg degrees clockwise.
     """
-    return (math.cos(math.radians(deg))*(x - refx)) + (math.sin(math.radians(deg))*(y - refy)) + refx
+    return (math.cos(math.radians(deg))*(x - refx)) - (math.sin(math.radians(deg))*(y - refy)) + refx
 
 def rotatey((x, y), (refx, refy), deg):
     """
@@ -96,7 +100,7 @@ def rotatey((x, y), (refx, refy), deg):
     rotated about the point (refx, refy) by
     deg degrees clockwise.
     """
-    return (- math.sin(math.radians(deg))*(x - refx)) + (math.cos(math.radians(deg))*(y - refy)) + refy
+    return (math.sin(math.radians(deg))*(x - refx)) + (math.cos(math.radians(deg))*(y - refy)) + refy
 
 def rotatep(p, ref, d):
     """
@@ -176,6 +180,13 @@ class Shape(object):
 # <markdowncell>
 
 # The following is a map of all of the shapes in the game of Blokus. It is not difficult to add shapes to this game as long as the user specifies the size, points, and corners associated with that shape.
+
+# <codecell>
+
+from IPython.display import Image
+Image(filename='Images/Blokus_Tiles.png')
+
+# <codecell>
 
 # Implement all of the shapes according to the Shape
 # class defined earlier and according to the image above.
@@ -279,7 +290,7 @@ class V5(Shape):
         self.size = 5
     def set_points(self, x, y): 
         self.points = [(x, y), (x, y + 1), (x, y + 2), (x + 1, y), (x + 2, y)]
-        self.corners = [(x - 1, y - 2), (x + 3, y - 1), (x + 3, y + 1), (x + 1, y + 3), (x - 1, y + 3)]
+        self.corners = [(x - 1, y - 1), (x + 3, y - 1), (x + 3, y + 1), (x + 1, y + 3), (x - 1, y + 3)]
 
 class N(Shape):
     def __init__(self):
@@ -287,7 +298,7 @@ class N(Shape):
         self.size = 5
     def set_points(self, x, y): 
         self.points = [(x, y), (x + 1, y), (x + 2, y), (x, y - 1), (x - 1, y - 1)]
-        self.corners = [(x + 1, y - 2), (x + 3, y - 1), (x + 3, y + 1), (x - 1, y + 2), (x - 2, y), (x - 2, y - 2)]
+        self.corners = [(x + 1, y - 2), (x + 3, y - 1), (x + 3, y + 1), (x - 1, y + 1), (x - 2, y), (x - 2, y - 2)]
         
 class Z5(Shape):
     def __init__(self):
@@ -303,7 +314,7 @@ class T4(Shape):
         self.size = 4
     def set_points(self, x, y): 
         self.points = [(x, y), (x, y + 1), (x + 1, y), (x - 1, y)]
-        self.corners = [(x + 2, y - 2), (x + 2, y + 2), (x + 1, y + 2), (x - 1, y + 2), (x - 2, y + 1), (x - 2, y - 1)]
+        self.corners = [(x + 2, y - 1), (x + 2, y + 1), (x + 1, y + 2), (x - 1, y + 2), (x - 2, y + 1), (x - 2, y - 1)]
         
 class P(Shape):
     def __init__(self):
@@ -437,6 +448,8 @@ def fancyBoard(board, num):
 # <codecell>
 
 # This is the type of board the fancy printer produces in a separate window.
+
+Image(filename='images/Sample_Blokus.png')
 
 # <codecell>
 
@@ -815,6 +828,44 @@ class Blokus(Game):
 
 # Test the printing function on an empty board.
 
+bd = Board(14, 14, '_')
+bd.print_board()
+
+# <codecell>
+
+# Test the in_bounds function.
+
+print "Should be False: " + str(bd.in_bounds((-1, 1)))
+print "Should be True: " + str(bd.in_bounds((1, 1)))
+print "Should be True: " + str(bd.in_bounds((13, 13)))
+print "Should be False: " + str(bd.in_bounds((14, 2)))
+print "Should be False: " + str(bd.in_bounds((-2, -2)))
+
+# <codecell>
+
+# Test adding in a piece at a certain location
+# and print again.
+
+piece1 = I5()
+piece1.create(0, (0, 0))
+
+piece2 = I1()
+piece2.create(0, (9, 9))
+
+def naive(player, game):
+    return piece1
+
+def naive2(player, game):
+    return piece2
+
+few = [I1(), I2(), I3(), I4(), I5()]
+
+alice = Player("A", "Alice", naive)
+bob = Player("B", "Bob", naive2)
+
+bd = Board(10, 10, '_')
+bd.print_board()
+
 # <codecell>
 
 # Instantiate a miniature Blokus game with the
@@ -827,10 +878,58 @@ class Blokus(Game):
 # Test that the pieces Alice has are reduced
 # appropriately.
 
+miniblokus = Blokus([alice, bob], bd, few)
+
+# <codecell>
+
+print 
+print "We should be on round zero: " + str(miniblokus.rounds)
+print 
+
+miniblokus.play()
+print 
+
+print "The number of rounds should be incremented by one: " + str(miniblokus.rounds)
+print 
+print "Alice's pieces should have the shape that was used in the move removed."
+print [s.ID for s in alice.pieces]
+print 
+
+# <codecell>
+
+print 
+print "Recall that we are on this round: " + str(miniblokus.rounds)
+print 
+
+miniblokus.play()
+print 
+
+print "The number of rounds should have been incremented by one: " + str(miniblokus.rounds)
+print 
+print "Alice's pieces should be the same as before!"
+print [s.ID for s in alice.pieces]
+print 
+print "Bob's pieces should have the shape that was used in the move removed."
+print [s.ID for s in bob.pieces]
+print 
+
+# <codecell>
+
+print 
+print "Let's see what the board looks like now: "
+print 
+miniblokus.board.print_board()
+
 # <codecell>
 
 # Testing the possible_moves function in Player.
 
+test = alice.possible_moves([P()], miniblokus)
+
+for t in test:
+    print t.points
+
+# <headingcell level=3>
 
 # Algorithms
 
@@ -842,10 +941,10 @@ class Blokus(Game):
 
 # GLOBAL VARIABLES:
 
-All_Shapes = [I1(), I2(), I3(), I4(), I5(), \
-              V3(), L4(), Z4(), O4(), L5(), \
-              T5(), V5(), N(), Z5(), T4(), \
-              P(), W(), U(), F(), X(), Y()]
+All_Shapes = ([I1(), I2(), I3(), I4(), I5(), 
+              V3(), L4(), Z4(), O4(), L5(), 
+              T5(), V5(), N(), Z5(), T4(), 
+              P(), W(), U(), F(), X(), Y()])
 
 All_Degrees = [0, 90, 180, 270]
 
@@ -888,9 +987,49 @@ def Random_Player(player, game):
 
 # Test out the Random_Player strategy on a standard two-player board.
 
+arnold = Player("A", "Arnold", Random_Player)
+beatrix = Player("B", "Beatrix", Random_Player)
+
+standard_size = Board(14, 14, "_")
+
+randomblokus = Blokus([arnold, beatrix], standard_size, All_Shapes)
+
+# <codecell>
+
+# Play Arnold and Beatrix against each other.
+# See who wins!
+
+randomblokus.play()
+randomblokus.board.print_board(num = randomblokus.rounds, fancy = False)
+
+while randomblokus.winner() == "None":
+    randomblokus.play()
+    randomblokus.board.print_board(num = randomblokus.rounds, fancy = False)
+
+print 
+randomblokus.board.print_board()
+print 
+randomblokus.play()
+
+print "The final scores are..."
+
+by_name = sorted(randomblokus.players, key = lambda player: player.name)
+
+for p in by_name:
+    print p.name + " : " + str(p.score)
+
+# <codecell>
+
 # Go on this link to see an animation of the game being played:
 # 
 # https://imgflip.com/gif/8fmd8
+
+# <codecell>
+
+print "This is the final board:"
+print
+
+Image(filename='Random_Game/random27.png')
 
 # <headingcell level=4>
 
@@ -1029,6 +1168,38 @@ def Greedy_Player(player, game, weights):
 # $ GreedyEval_i = size_i W_0 + \frac{\sum{(cor_{my} - cor_{opp})}}{n_{opp}} W_1 $
 # 
 # This returns a score for the placement.
+
+# <codecell>
+
+# create Ana (Greedy Player) and Banana (Random Player)
+
+ana = Greedy("A", "Ana", Greedy_Player, [1, 2])
+banana = Greedy("B", "Banana", Greedy_Player, [2, 1])
+
+standard_size = Board(14, 14, "_")
+
+greedyblokus = Blokus([ana, banana], standard_size, All_Shapes)
+
+# <codecell>
+
+greedyblokus.play()
+greedyblokus.board.print_board(num = greedyblokus.rounds, fancy = False)
+
+while greedyblokus.winner() == "None":
+    greedyblokus.play()
+    greedyblokus.board.print_board(num = greedyblokus.rounds, fancy = False)
+    
+print 
+greedyblokus.board.print_board()
+print 
+greedyblokus.play()
+
+print "The final scores are..."
+
+by_name = sorted(greedyblokus.players, key = lambda player: player.name)
+
+for p in by_name:
+    print p.name + " : " + str(p.score)
 
 # <headingcell level=4>
 
@@ -1195,7 +1366,37 @@ def Minimax_Player(player, game, weights):
 
 # <codecell>
 
+# create Arya (Minimax Player) and Baraz (Greedy Player)
+arya = Greedy("A", "Arya", Minimax_Player, [2, 1, 5, 1, 1])
+baraz = Greedy("B", "Baraz", Greedy_Player, [1, 2, 5, 1, 1])
 
+standard_size = Board(14, 14, "_")
+
+minimaxblokus = Blokus([arya, baraz], standard_size, All_Shapes)
+
+# <codecell>
+
+minimaxblokus.play()
+minimaxblokus.board.print_board(num = minimaxblokus.rounds, fancy = False)
+
+while minimaxblokus.winner() == "None":
+    minimaxblokus.play()
+    minimaxblokus.board.print_board(num = minimaxblokus.rounds, fancy = False)
+
+print 
+minimaxblokus.board.print_board()
+print 
+minimaxblokus.play()
+
+print "The final scores are..."
+
+by_name = sorted(minimaxblokus.players, key = lambda player: player.name)
+
+for p in by_name:
+    print p.name + " : " + str(p.score)
+    
+
+# <headingcell level=4>
 
 # USER INPUT
 
