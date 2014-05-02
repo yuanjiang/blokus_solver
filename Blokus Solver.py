@@ -168,7 +168,8 @@ class Shape(object):
         
         def flip_i(p):
             if self.ID == "I5":
-                index = self.points.index(p)
+                if p in self.points:
+                    index = self.points.index(p)
                 if index == 0 or index == 4:
                     self.refpt = self.points[abs(index-4)]
                 else:
@@ -204,7 +205,6 @@ class Shape(object):
         if orientation == "h":
             if self.ID in ["I5", "I4", "I3", "I2"]:
                 self.points = map(flip_i, self.points)
-                self.corners = map(flip_i, self.corners)
             else:
                 self.points = map(flip_h, self.points)
                 self.corners = map(flip_h, self.corners)
