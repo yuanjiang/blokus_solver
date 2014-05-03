@@ -1,7 +1,6 @@
 \documentclass[11pt]{article}
 \usepackage{amsmath}
 \usepackage{fullpage}
-\usepackage{verbatim}
 \usepackage{palatino}
 \usepackage{hyperref}
 \usepackage{tikz}
@@ -9,6 +8,10 @@
 \usepackage{natbib, setspace}
 \usetikzlibrary{arrows,automata}
 \usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage{graphics}
+
+\pagestyle{empty}
 
 \newcommand{\bs}{\boldsymbol}
 \newcommand{\mb}{\mathbf}
@@ -40,7 +43,7 @@
 
 \section{Overview}
 
-Blokus is a popular two- or four-player board game that was invented in 2000. Now there is even an online forum for avid Blokus players that hosts events and competitions. Blokus is a relatively simple game: it consists of 21 colored Tetris-shaped pieces that players are only allowed to place on a square board cornering their own pieces and non-overlapping any other pieces. Once no more players can place any more pieces, the winner is determined by the player who has the fewest number of points (where one square of a piece is one point).
+Blokus is a popular two- or four-player board game that was invented in 2000. Now there is even an \href{http://forum.blokus.refreshed.be/}{online forum} for avid Blokus players that hosts events and competitions. Blokus is a relatively simple game: it consists of 21 colored Tetris-shaped pieces that players are only allowed to place on a square board cornering their own pieces and non-overlapping any other pieces. Once no more players can place any more pieces, the winner is determined by the player who has the fewest number of points (where one square of a piece is one point).
 \\\\
 In this project, we set out to write a solver for this game. The implementation of this project can roughly be divided into two parts: constructing the interface of the game, and writing three different solvers. We chose to use object-oriented programming in order to construct the game. The three solvers were chose to implement were:
 \begin{enumerate}
@@ -48,6 +51,7 @@ In this project, we set out to write a solver for this game. The implementation 
 	\item {\bf Greedy} {\it (choose the ``best" piece, according to a certain score function)}
 	\item {\bf Minimax} {\it (choose the ``best" piece by looking ahead one move)}
 \end{enumerate}
+We provide a brief demo video of our project here. %\href{YOUTUBELINK}{here}.
 This report is a discussion of our implementation (including some of its advantages and disadvantages), our results, and a reflection on the success of our project.
 
 
@@ -67,7 +71,7 @@ What was particularly effective in our timeline were the daily goals we set for 
 %\href{run:report/Functionality_Checkpoint.pdf}{Functionality Checkpoint}
 %\href{run:report/Final Project Specification (Draft).pdf}{Project Specification Draft}
 %\href{run:report/Final Project Specification (Final).pdf}{Project Specification Final}
-%\href{run:primo.avi}{\includegraphics[scale=0.15]{Screenshot.jpg}} FOR VIDEO LINKS
+% \href{run:report/Random_Players.avi}{Link to video.}
 
 \subsection{Meetings}
 
@@ -85,7 +89,7 @@ In our original \href{run:report/Final Project Specification (Draft).pdf}{Projec
 
 \section{Implementation}
 
-Recall that our project consisted of two relatively distinct parts: implementing a Blokus game, and implementing the algorithms to solve it.
+Recall that our project consisted of two relatively distinct parts: implementing a Blokus game, and implementing the algorithms to solve it. We wrote our code in an iPython Notebook because it was easier to read and comment. It can be found \href{http://nbviewer.ipython.org/github/yuanjiang/blokus_solver/blob/master/Blokus\%20Solver.ipynb}{here}.
 
 \subsection{The Game}
 
@@ -201,6 +205,18 @@ $$ GreedyEval_i = size_i W_0 + (cor_{my} - cor_{opp}) W_1 $$
 \bigskip
 
 \noindent Intuitively, we can see that if we set $W_3$ to $0$, Minimax will be identical to Greedy since we are effectively ignoring the score of the second piece and only maximizing over the score of the first.
+\\\\
+{\bf User.} The last strategy we implemented was not truly an algorithm, but was a key component of our project. We allowed the user to interact with our algorithms! We had to make several design choices here. We could either have users specify a shape, reference point, orientation, and flip in order to place a shape. But this is very tedious for the user when the game is played on a screen and the user does not have physical pieces to rotate and flip in his/her hands! Another option was to have the user specify a shape and have the game display a list of possible moves. But this is also tedious because the user would need to look through a list of tuples to choose his/her move.
+\\\\
+We chose to meet somewhere in the middle. Users now specify a reference point and a shape. Users know where reference points are on the pieces according to a pieces map that is displayed at the beginning of the game:
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale = 0.65]{Blokus_Tiles.png}
+\end{center}
+\end{figure}
+
+\noindent Given this information, the game is able to generate a (much shorter!) list of possible moves that the user can choose from.
 
 
 \pagebreak
@@ -212,7 +228,7 @@ Developing multiple algorithms gave us the opportunity to play them against each
 
 \subsection{Performance}
 
-The following table summarizes the scores of some of our algorithms playing against each other. Recall that $S:C$ refers to the ratio between the score weighting and the corners weighting in the Greedy and Minimax algorithms; $Ft:Sc$ refers to the ratio between the ratings of the first and second move that are scored in the Minimax algorithm.
+The following table summarizes the scores of some of our algorithms playing against each other. Recall that $S$:$C$ refers to the ratio between the score weighting and the corners weighting in the Greedy and Minimax algorithms; $Ft$:$Sc$ refers to the ratio between the ratings of the first and second move that are scored in the Minimax algorithm. (Videos pop up by clicking on the scores.)
 
 \bigskip
 \begin{center}
@@ -220,15 +236,19 @@ The following table summarizes the scores of some of our algorithms playing agai
 \hline
 {\it Player 1} & {\it Weights 1 } & {\it Player 2} & {\it Weights 2} & {\it Duration} & {\it Score} & {\it Winner} \\
 \hline
-Random & n/a & Random & n/a & 1:40 & rand. & rand. \\
+Random & n/a & Random & n/a & 1:40 & \href{run:report/Videos/Random_v_Random.avi}{rand.} & rand. \\
 \hline
-Greedy & {\it S:C} = 2:1 & Random & n/a & 2:15 & 76, 46 & 1 \\
+Greedy & {\it S:C} = 2:1 & Random & n/a & 2:15 & \href{run:report/Videos/Greedy21_v_Random.avi}{76, 46} & 1 \\
 \hline
-Greedy & {\it S:C} = 1:2 & Greedy & {\it S:C} = 2:1 & 2:15 & 67, 74 & 2 \\
+Greedy & {\it S:C} = 1:2 & Greedy & {\it S:C} = 2:1 & 2:15 & \href{run:report/Videos/Greedy12_v_Greedy21.avi}{67, 74} & 2 \\
 \hline
-Minimax & {\it S:C} = 2:1, {\it Ft:Sc} = 1:1 & Greedy & {\it S:C} = 2:1 & 4:15 & Score & 1 \\
+Minimax & {\it S:C} = 2:1, {\it Ft:Sc} = 1:1 & Greedy & {\it S:C} = 2:1 & 4:15 & \href{run:report/Videos/Minimax21511_v_Greedy21.avi}{73, 66} & 1 \\
 \hline
-Minimax & {\it S:C} = 2:1, {\it Ft:Sc} = 1:1 & Minimax & {\it S:C} = 2:1, {\it Ft:Sc} = 2:1 & 4:15 & Score & 2 \\
+Greedy & {\it S:C} = 2:1 & Minimax & {\it S:C} = 2:1, {\it Ft:Sc} = 1:1& 4:15 & \href{run:report/Videos/Greedy21_v_Minimax21511.avi}{71, 72} & 2 \\
+\hline
+Greedy & {\it S:C} = 1:2 & Minimax & {\it S:C} = 2:1, {\it Ft:Sc} = 1:1 & 4:15 & 63, 77 & 2 \\
+\hline
+Minimax & {\it S:C} = 1:2, {\it Ft:Sc} = 1:1 & Minimax & {\it S:C} = 2:1, {\it Ft:Sc} = 1:1 & 4:15 & \href{run:report/Videos/Minimax12511_v_Minimax21511}{76, 68} & 2 \\
 \hline
 \end{tabular}
 \end{center}
