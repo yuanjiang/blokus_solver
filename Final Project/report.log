@@ -1,9 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.2.14)  2 MAY 2014 21:39
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.2.14)  3 MAY 2014 20:03
 entering extended mode
-**report.tex
-
-("C:\Users\Theresa\Documents\College\Junior Year\Spring Term\Computer Science 5
-1\Final Submission\report.tex"
+**C:/Users/Theresa/Documents/GitHub/blokus_solver/Final*Project/report.tex
+("C:/Users/Theresa/Documents/GitHub/blokus_solver/Final Project/report.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -595,8 +593,7 @@ Package: inputenc 2008/03/30 v1.1d Input encoding file
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\latin1.def"
 File: latin1.def 2008/03/30 v1.1d Input encoding file
 ))
-("C:\Users\Theresa\Documents\College\Junior Year\Spring Term\Computer Science 5
-1\Final Submission\report.aux")
+("C:\Users\Theresa\Documents\GitHub\blokus_solver\Final Project\report.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
@@ -631,12 +628,11 @@ LaTeX Info: Redefining \ref on input line 19.
 LaTeX Info: Redefining \pageref on input line 19.
 LaTeX Info: Redefining \nameref on input line 19.
 
-("C:\Users\Theresa\Documents\College\Junior Year\Spring Term\Computer Science 5
-1\Final Submission\report.out")
-("C:\Users\Theresa\Documents\College\Junior Year\Spring Term\Computer Science 5
-1\Final Submission\report.out")
+("C:\Users\Theresa\Documents\GitHub\blokus_solver\Final Project\report.out")
+("C:\Users\Theresa\Documents\GitHub\blokus_solver\Final Project\report.out")
 \@outlinefile=\write4
- ABD: EveryShipout initializing macros
+
+ABD: EveryShipout initializing macros
 (C:\Users\Theresa\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count131
@@ -653,136 +649,135 @@ LaTeX Info: Redefining \nameref on input line 19.
 )
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <17.28> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 28.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 43.
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 44.
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 46.
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--49
+Underfull \hbox (badness 10000) in paragraph at lines 48--51
 
  []
 
-LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 50.
 [1
 
 {C:/Users/Theresa/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 65.
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 66.
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--70
+Underfull \hbox (badness 10000) in paragraph at lines 68--71
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--81
+Underfull \hbox (badness 10000) in paragraph at lines 79--82
 
  []
 
 [2] [3] [4]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 157.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 158.
 
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 161--170
+Underfull \hbox (badness 10000) in paragraph at lines 162--171
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 161--170
+Underfull \hbox (badness 10000) in paragraph at lines 162--171
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 161--170
+Underfull \hbox (badness 10000) in paragraph at lines 162--171
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 161--170
+Underfull \hbox (badness 10000) in paragraph at lines 162--171
 
  []
 
 [5]
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 172.
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 173.
 
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsppl.fd"
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 172.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 173.
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--191
+Underfull \hbox (badness 10000) in paragraph at lines 186--192
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--191
+Underfull \hbox (badness 10000) in paragraph at lines 186--192
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 207--212
+Underfull \hbox (badness 10000) in paragraph at lines 208--213
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 207--212
+Underfull \hbox (badness 10000) in paragraph at lines 208--213
 
  []
 
-[7] <Blokus_Tiles.png, id=125, 532.99126pt x 352.31625pt>
+[7] <Blokus_Tiles.png, id=126, 532.99126pt x 352.31625pt>
 File: Blokus_Tiles.png Graphic file (type png)
 
 <use Blokus_Tiles.png>
-Package pdftex.def Info: Blokus_Tiles.png used on input line 215.
+Package pdftex.def Info: Blokus_Tiles.png used on input line 216.
 (pdftex.def)             Requested size: 346.44022pt x 229.00284pt.
- [8 <C:/Users/Theresa/Documents/College/Junior Year/Spring Term/Computer Scienc
-e 51/Final Submission/Blokus_Tiles.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 257--262
+ [8 <C:/Users/Theresa/Documents/GitHub/blokus_solver/Final Project/Blokus_Tiles
+.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 258--263
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 257--262
+Underfull \hbox (badness 10000) in paragraph at lines 258--263
 
  []
 
-[9] [10] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 288--291
+[9] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 289--292
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 294--297
+Underfull \hbox (badness 10000) in paragraph at lines 295--298
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 307--310
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 306--309
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 322.
+ [13]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 322.
 
- []
-
-[13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 321.
- [14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 321.
-
-("C:\Users\Theresa\Documents\College\Junior Year\Spring Term\Computer Science 5
-1\Final Submission\report.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 321.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 321.
+("C:\Users\Theresa\Documents\GitHub\blokus_solver\Final Project\report.aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 322.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 322.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: 62C92B1DEB380C71DF90D37C4B68C7A1;979.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 321.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 322.
  ) 
 Here is how much of TeX's memory you used:
- 15245 strings out of 493921
- 284783 string characters out of 3147276
- 360390 words of memory out of 3000000
+ 15244 strings out of 493921
+ 284402 string characters out of 3147276
+ 360411 words of memory out of 3000000
  18227 multiletter control sequences out of 15000+200000
  16784 words of font info for 48 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 56i,8n,73p,852b,854s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,8n,73p,914b,854s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fon
@@ -794,9 +789,9 @@ cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 les/MiKTeX 2.9/fonts/type1/urw/palatino/uplb8a.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/u
 rw/palatino/uplri8a.pfb>
-Output written on report.pdf (14 pages, 187850 bytes).
+Output written on report.pdf (13 pages, 187617 bytes).
 PDF statistics:
- 219 PDF objects out of 1000 (max. 8388607)
- 41 named destinations out of 1000 (max. 500000)
+ 216 PDF objects out of 1000 (max. 8388607)
+ 40 named destinations out of 1000 (max. 500000)
  160 words of extra memory for PDF output out of 10000 (max. 10000000)
 

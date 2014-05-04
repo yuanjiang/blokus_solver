@@ -37,8 +37,10 @@
 
 \end{center}
 
-
 \bigskip
+
+
+\begin{center} {\bf Find a link to our demo video \href{http://youtu.be/XVqFYVdfPtk}{here}!} \end{center}
 
 
 \section{Overview}
@@ -51,7 +53,6 @@ In this project, we set out to write a solver for this game. The implementation 
 	\item {\bf Greedy} {\it (choose the ``best" piece, according to a certain score function)}
 	\item {\bf Minimax} {\it (choose the ``best" piece by looking ahead one move)}
 \end{enumerate}
-We provide a brief demo video of our project here. %\href{YOUTUBELINK}{here}.
 This report is a discussion of our implementation (including some of its advantages and disadvantages), our results, and a reflection on the success of our project.
 
 
@@ -64,7 +65,7 @@ Overall, our team was very successful in planning meetings and staying on top of
 
 \subsection{Timeline}
 
-Our team followed our timeline in the \href{run:report/Functionality_Checkpoint.pdf}{Functionality Checkpoint} and \href{run:report/Final Project Specification (Final).pdf}{Project Specification Final} very closely by working on our project for a minimum of three to four hours every night. By keeping track of our progress and staying on schedule, we were able to accomplish all of our goals and even implemented two of our three cool extensions.
+Our team followed our timeline in the \href{run:report/Functionality_Checkpoint Ann..pdf}{Functionality Checkpoint} and \href{run:report/Final Project Specification (Final) Ann..pdf}{Project Specification Final} very closely by working on our project for a minimum of three to four hours every night. By keeping track of our progress and staying on schedule, we were able to accomplish all of our goals and even implemented two of our three cool extensions.
 \\\\
 What was particularly effective in our timeline were the daily goals we set for ourselves. In particular, we found our objective to finish a function every night particularly useful. Even if it was just a small helper function, something was added to our project every single day.
 
@@ -81,7 +82,7 @@ In addition, the next meeting was often scheduled at the end of every meeting. I
 
 \subsection{Modularization}
 
-In our original \href{run:report/Final Project Specification (Draft).pdf}{Project Specification Draft}, we said that we were going to take advantage of our three-person team to implement the three algorithms separately. This did not end up occurring because $1.)$ there was an extreme imbalance in the difficulty of the algorithms (Random was far easier) and $2.)$ the more difficult algorithms, Greedy and Minimax, required more than one person - if not the whole team - to reason through them and code them correctly and efficiently. Therefore, we modified our original plan and ended up working on most of the algorithms together. Debugging was sometimes done alone.
+In our original \href{run:report/Final Project Specification (Draft) Ann..pdf}{Project Specification Draft}, we said that we were going to take advantage of our three-person team to implement the three algorithms separately. This did not end up occurring because $1.)$ there was an extreme imbalance in the difficulty of the algorithms (Random was far easier) and $2.)$ the more difficult algorithms, Greedy and Minimax, required more than one person - if not the whole team - to reason through them and code them correctly and efficiently. Therefore, we modified our original plan and ended up working on most of the algorithms together. Debugging was sometimes done alone.
 
 
 \pagebreak
@@ -89,7 +90,7 @@ In our original \href{run:report/Final Project Specification (Draft).pdf}{Projec
 
 \section{Implementation}
 
-Recall that our project consisted of two relatively distinct parts: implementing a Blokus game, and implementing the algorithms to solve it. We wrote our code in an iPython Notebook because it was easier to read and comment. It can be found \href{http://nbviewer.ipython.org/github/yuanjiang/blokus_solver/blob/master/Blokus\%20Solver.ipynb}{here}.
+Recall that our project consisted of two relatively distinct parts: implementing a Blokus game, and implementing the algorithms to solve it. We wrote our code in an iPython Notebook because it was easier to read and comment. It can be found \href{http://nbviewer.ipython.org/github/yuanjiang/blokus_solver/blob/master/Final\%20Project/code/Blokus\%20Solver.ipynb}{here}.
 
 \subsection{The Game}
 
@@ -262,7 +263,7 @@ In addition, notice that the Greedy player that favors size beats the Greedy pla
 
 \subsection{Lessons}
 
-Running our three algorithms taught us about some important - and intuitive - properties of the game of Blokus.
+Running our three algorithms taught us about some important properties of the game of Blokus.
 
 \begin{enumerate}
 	\item Running different weightings taught us that the size of a piece is more important than the number of corners you could gain (or your opponent could lose) for any given placement.
@@ -291,7 +292,7 @@ Communication was what our team excelled in. We communicated our ideas well duri
 
 \subsection{Time Management}
 
-By working on our project very consistently, we were able to keep on track as dictated by our timeline in the \href{run:report/Final Project Specification (Final).pdf}{Project Specification Final} and later in the \href{run:report/Functionality_Checkpoint.pdf}{Functionality Checkpoint} as well. We were able to implement two of the cool extensions that we had proposed in the initial project specification. Not only did we include a factor in the evaluation function that took into consideration how many opponent corners a move blocked off, we also included a user interface where a user could choose to play against any of our three algorithms. This would not have been possible without proper time management.
+By working on our project very consistently, we were able to keep on track as dictated by our timeline in the \href{run:report/Final Project Specification (Final) Ann..pdf}{Project Specification Final} and later in the \href{run:report/Functionality_Checkpoint Ann..pdf}{Functionality Checkpoint} as well. We were able to implement two of the cool extensions that we had proposed in the initial project specification. Not only did we include a factor in the evaluation function that took into consideration how many opponent corners a move blocked off, we also included a user interface where a user could choose to play against any of our three algorithms. This would not have been possible without proper time management.
 \\\\
 Part of this time management was also keeping every team member up-to-date on the code, so that one team member's busy day would not prevent others from working on the project. For example, on Tuesdays Theresa could not work on the project, but Michelle and Yuan were always able to do work because there was never a point at which the whole team did not know what code still need to be written, edited, or debugged.
 
